@@ -1,0 +1,43 @@
+# Pragma - Django OCR Invoice Processing System
+# Author: Pragma Team
+# Date: 2026-03-18
+# Description: Docker Compose configuration for multi-container setup
+
+services:
+  db:
+    image: postgres:15
+    container_name: pragma_db
+    environment:
+      POSTGRES_DB: pragma_db
+      POSTGRES_USER: pragma_user
+      POSTGRES_PASSWORD: pragma_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pragma_user -d pragma_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build: .
+    container_name: pragma_web
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://pragma_user:pragma_password@db:5432/pragma_db
+      SECRET_KEY: django-insecure-pragma-dev-key-change-in-production
+      DEBUG: "True"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
