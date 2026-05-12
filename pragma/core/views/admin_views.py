@@ -5,9 +5,13 @@ Date: 2026-03-18
 Description: Admin-panel views for CRUD and matching operations
 """
 
+import uuid
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
@@ -39,11 +43,6 @@ def _resolver_cliente(cliente, nit):
 def admin_home(request):
     ensure_admin_or_raise(request)
     return redirect("admin_panel:admin_facturas")
-
-
-import uuid
-from django.core.files.base import ContentFile
-from django.core.files.storage import default_storage
 
 
 @login_required
