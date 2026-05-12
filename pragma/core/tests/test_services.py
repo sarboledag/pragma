@@ -5,8 +5,10 @@ Date: 2026-03-18
 Description: Unit tests for OCR, matching, dashboard, and export services
 """
 
+import unittest
 from datetime import date
 from decimal import Decimal
+from unittest.mock import MagicMock
 
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
@@ -14,6 +16,7 @@ from django.test import TestCase
 from pragma.core.models import CertificadoBancario, Cliente, DetallePago, Factura
 from pragma.core.services.comparador_pagos import (
     buscar_certificado_candidato,
+    buscar_factura_candidata,
     comparar_pagos,
     crear_o_actualizar_detalle_pago,
 )
@@ -138,3 +141,87 @@ class ServiceLayerTests(TestCase):
     def test_buscar_certificado_candidato(self):
         best_cert = buscar_certificado_candidato(self.factura)
         self.assertEqual(best_cert.id, self.certificado.id)
+
+
+class DependencyInjectionTests(unittest.TestCase):
+    """
+    Verifica que los servicios aceptan repositorios inyectados.
+    No requiere base de datos — demuestra el principio de inversión de dependencias.
+    """
+
+    def test_buscar_factura_candidata_usa_repositorio_inyectado(self):
+        certificado = MagicMock()
+        certificado.cliente_nit = "9999-9"
+        certificado.monto = Decimal("1000.00")
+        certificado.fecha = date(2026, 1, 1)
+
+        factura_candidata = MagicMock()
+        factura_candidata.monto = Decimal("1000.00")
+        factura_candidata.fecha = date(2026, 1, 1)
+
+        mock_qs = MagicMock()
+        mock_qs.filter.return_value.order_by.return_value = [factura_candidata]
+
+        resultado = buscar_factura_candidata(certificado, factura_qs=mock_qs)
+
+        self.assertEqual(resultado, factura_candidata)
+        mock_qs.filter.assert_called_once_with(cliente_nit="9999-9")
+
+    def test_buscar_certificado_candidato_usa_repositorio_inyectado(self):
+        factura = MagicMock()
+        factura.cliente_nit = "1111-1"
+        factura.monto = Decimal("500.00")
+        factura.fecha = date(2026, 2, 1)
+
+        cert_candidato = MagicMock()
+        cert_candidato.monto = Decimal("500.00")
+        cert_candidato.fecha = date(2026, 2, 1)
+
+        mock_qs = MagicMock()
+        mock_qs.filter.return_value.order_by.return_value = [cert_candidato]
+
+        resultado = buscar_certificado_candidato(factura, certificado_qs=mock_qs)
+
+        self.assertEqual(resultado, cert_candidato)
+        mock_qs.filter.assert_called_once_with(cliente_nit="1111-1")
+
+    def test_crear_o_actualizar_detalle_pago_usa_manager_inyectado(self):
+        factura = MagicMock()
+        factura.monto = Decimal("800.00")
+        factura.cliente_nit = "2222-2"
+        factura.fecha = date(2026, 3, 1)
+
+        certificado = MagicMock()
+        certificado.monto = Decimal("800.00")
+        certificado.cliente_nit = "2222-2"
+        certificado.fecha = date(2026, 3, 1)
+
+        mock_detalle = MagicMock()
+        mock_manager = MagicMock()
+        mock_manager.update_or_create.return_value = (mock_detalle, True)
+
+        resultado = crear_o_actualizar_detalle_pago(
+            factura, certificado, detalle_pago_manager=mock_manager
+        )
+
+        self.assertEqual(resultado, mock_detalle)
+        mock_manager.update_or_create.assert_called_once()
+
+    def test_get_dashboard_metrics_usa_querysets_inyectados(self):
+        mock_factura_qs = MagicMock()
+        mock_factura_qs.count.return_value = 5
+
+        mock_detalle_qs = MagicMock()
+        mock_detalle_qs.count.return_value = 4
+        mock_detalle_qs.filter.return_value.count.return_value = 3
+        mock_detalle_qs.values.return_value.distinct.return_value.count.return_value = 4
+
+        metrics = get_dashboard_metrics(
+            factura_qs=mock_factura_qs,
+            detalle_pago_qs=mock_detalle_qs,
+        )
+
+        self.assertEqual(metrics["total_facturas_procesadas"], 5)
+        self.assertEqual(metrics["validaciones_pendientes"], 1)
+        mock_factura_qs.count.assert_called_once()
+        mock_detalle_qs.filter.assert_called()

@@ -7,8 +7,14 @@ Description: Smart matching service between invoices and bank certificates
 
 from datetime import timedelta
 from decimal import Decimal
+from typing import Optional
 
 from pragma.core.models import DetallePago, Factura, CertificadoBancario
+from pragma.core.services.protocols import (
+    CertificadoQueryable,
+    DetallePagoManager,
+    FacturaQueryable,
+)
 
 
 def _format_difference(field, factura_value, certificado_value, message):
@@ -95,9 +101,15 @@ def generar_resumen_pagos(estado_match, diferencias=None, match_score=None):
     )
 
 
-def crear_o_actualizar_detalle_pago(factura, certificado):
+def crear_o_actualizar_detalle_pago(
+    factura,
+    certificado,
+    detalle_pago_manager: Optional[DetallePagoManager] = None,
+):
+    if detalle_pago_manager is None:
+        detalle_pago_manager = DetallePago.objects
     comparison = comparar_pagos(factura, certificado)
-    detalle_pago, _ = DetallePago.objects.update_or_create(
+    detalle_pago, _ = detalle_pago_manager.update_or_create(
         factura=factura,
         certificado=certificado,
         defaults={
@@ -110,8 +122,10 @@ def crear_o_actualizar_detalle_pago(factura, certificado):
     return detalle_pago
 
 
-def buscar_factura_candidata(certificado):
-    candidates = Factura.objects.filter(cliente_nit=certificado.cliente_nit).order_by("-fecha")
+def buscar_factura_candidata(certificado, factura_qs: Optional[FacturaQueryable] = None):
+    if factura_qs is None:
+        factura_qs = Factura.objects
+    candidates = factura_qs.filter(cliente_nit=certificado.cliente_nit).order_by("-fecha")
     best_invoice = None
     best_score = None
     for candidate in candidates:
@@ -124,11 +138,12 @@ def buscar_factura_candidata(certificado):
     return best_invoice
 
 
-def buscar_certificado_candidato(factura):
-    """
-    Looks for the best bank certificate candidate for a given invoice.
-    """
-    candidates = CertificadoBancario.objects.filter(cliente_nit=factura.cliente_nit).order_by("-fecha")
+def buscar_certificado_candidato(
+    factura, certificado_qs: Optional[CertificadoQueryable] = None
+):
+    if certificado_qs is None:
+        certificado_qs = CertificadoBancario.objects
+    candidates = certificado_qs.filter(cliente_nit=factura.cliente_nit).order_by("-fecha")
     best_cert = None
     best_score = None
     for candidate in candidates:
