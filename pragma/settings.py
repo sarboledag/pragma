@@ -156,3 +156,12 @@ MAX_UPLOAD_SIZE = 10485760  # 10MB
 
 # OCR settings
 OCR_SUPPORTED_FORMATS = ["pdf", "png", "jpg", "jpeg"]
+
+# Production security settings
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "http://localhost").split(",")
+    if origin.strip()
+]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
