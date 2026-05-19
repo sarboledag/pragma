@@ -1,0 +1,534 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-18 20:01-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\pragma\settings.py:124
+msgid "Español"
+msgstr ""
+
+#: .\pragma\settings.py:125
+msgid "English"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:4
+msgid "Admin Certificados"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:7
+msgid "Administración de certificados bancarios"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:9
+msgid "Crear certificado"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:13
+msgid "Guardar certificado"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:16
+#: .\templates\admin_panel\facturas.html:16
+#: .\templates\admin_panel\usuarios.html:16
+msgid "Listado"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:20
+msgid "Referencia"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:21
+#: .\templates\admin_panel\facturas.html:21
+msgid "Monto"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:22
+#: .\templates\admin_panel\facturas.html:22
+msgid "Fecha"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:23
+#: .\templates\admin_panel\facturas.html:23
+msgid "NIT"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:24
+#: .\templates\admin_panel\facturas.html:24
+#: .\templates\admin_panel\usuarios.html:23 .\templates\usuario\pagos.html:39
+msgid "Acciones"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:35
+#: .\templates\admin_panel\facturas.html:35
+#: .\templates\admin_panel\usuarios.html:33
+msgid "Editar"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:38
+#: .\templates\admin_panel\facturas.html:38
+#: .\templates\admin_panel\usuarios.html:36
+msgid "Eliminar"
+msgstr ""
+
+#: .\templates\admin_panel\certificados.html:44
+msgid "No hay certificados."
+msgstr ""
+
+#: .\templates\admin_panel\editar_certificado.html:4
+msgid "Editar Certificado"
+msgstr ""
+
+#: .\templates\admin_panel\editar_certificado.html:7
+msgid "Editar certificado"
+msgstr ""
+
+#: .\templates\admin_panel\editar_certificado.html:11
+#: .\templates\admin_panel\editar_factura.html:11
+#: .\templates\admin_panel\editar_usuario.html:11
+msgid "Guardar cambios"
+msgstr ""
+
+#: .\templates\admin_panel\editar_certificado.html:12
+#: .\templates\admin_panel\editar_factura.html:12
+#: .\templates\admin_panel\editar_usuario.html:12
+msgid "Volver"
+msgstr ""
+
+#: .\templates\admin_panel\editar_factura.html:4
+msgid "Editar Factura"
+msgstr ""
+
+#: .\templates\admin_panel\editar_factura.html:7
+msgid "Editar factura"
+msgstr ""
+
+#: .\templates\admin_panel\editar_usuario.html:4
+msgid "Editar Usuario"
+msgstr ""
+
+#: .\templates\admin_panel\editar_usuario.html:7
+msgid "Editar usuario"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:4
+msgid "Admin Facturas"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:7
+msgid "Administración de facturas"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:9
+msgid "Cargar factura por OCR"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:13
+msgid "Subir y procesar"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:20
+msgid "Número"
+msgstr ""
+
+#: .\templates\admin_panel\facturas.html:44
+msgid "No hay facturas."
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:4
+msgid "Revisar Factura (Admin)"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:11
+msgid "Admin"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:12 .\templates\base.html:296
+#: .\templates\usuario\facturas.html:4
+msgid "Facturas"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:13
+msgid "Revisar OCR"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:17
+msgid "Revisar Datos Extraídos (Admin)"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:18
+msgid "Verifica y corrige los datos antes de guardarlos en el sistema."
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:22
+msgid "Problemas de extracción:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:33
+msgid "Edición de Datos Extraídos"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:40
+msgid "Número de Factura:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:46
+msgid "NIT del Cliente:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:53
+msgid "Monto:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:58
+msgid "Fecha:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:65
+msgid "Asociar a Cliente:"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:71
+#: .\templates\usuario\cargar_factura.html:43
+msgid "Cancelar"
+msgstr ""
+
+#: .\templates\admin_panel\revisar_factura.html:72
+#: .\templates\usuario\revisar_factura.html:75
+msgid "Guardar Factura"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:4
+msgid "Admin Usuarios"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:7
+msgid "Administración de usuarios"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:9
+#: .\templates\admin_panel\usuarios.html:13
+msgid "Crear usuario"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:20 .\templates\usuario\login.html:23
+msgid "Usuario"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:21
+msgid "Correo"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:22
+msgid "Rol"
+msgstr ""
+
+#: .\templates\admin_panel\usuarios.html:42
+msgid "No hay usuarios de negocio registrados."
+msgstr ""
+
+#: .\templates\base.html:291 .\templates\usuario\dashboard.html:4
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\base.html:301 .\templates\usuario\pagos.html:4
+msgid "Pagos"
+msgstr ""
+
+#: .\templates\base.html:307
+msgid "Panel Admin"
+msgstr ""
+
+#: .\templates\base.html:316
+msgid "Idioma"
+msgstr ""
+
+#: .\templates\base.html:338
+msgid "Cerrar sesión"
+msgstr ""
+
+#: .\templates\base.html:341
+msgid "Ingresar"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:4
+#: .\templates\usuario\facturas.html:11
+msgid "Cargar Factura"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:10
+msgid "Cargar Nueva Factura"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:11
+msgid ""
+"Sube un archivo PDF o imagen para iniciar el procesamiento inteligente con "
+"OCR."
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:19
+msgid "Cliente (Opcional)"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:27
+msgid "Archivo de Factura"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:31
+msgid "Haz clic para subir"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:31
+msgid "o arrastra y suelta"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:33
+msgid "PDF, PNG, JPG hasta 10MB"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:42
+msgid "Procesar Documento"
+msgstr ""
+
+#: .\templates\usuario\cargar_factura.html:124
+msgid "Archivo seleccionado:"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:8
+msgid "Panel de Control"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:11
+msgid "Nueva Factura"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:17
+msgid "Facturas Procesadas"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:21
+msgid "Tasa de Match"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:25
+msgid "Pendientes"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:29
+msgid "Tiempo Ahorrado"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:36
+msgid "Inconsistencias Recientes"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:37
+msgid "Ver todos"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:43 .\templates\usuario\pagos.html:35
+msgid "Factura"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:44
+msgid "Certificado"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:45
+msgid "Estado"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:46
+msgid "Puntaje"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:56
+msgid "Match"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:58 .\templates\usuario\pagos.html:24
+#: .\templates\usuario\pagos.html:57
+msgid "Parcial"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:60 .\templates\usuario\pagos.html:59
+msgid "Inconsistente"
+msgstr ""
+
+#: .\templates\usuario\dashboard.html:67
+msgid "No se han detectado inconsistencias recientes. Todo está al día."
+msgstr ""
+
+#: .\templates\usuario\facturas.html:8
+msgid "Consulta de Facturas"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:20
+msgid "Número, NIT o nombre del cliente..."
+msgstr ""
+
+#: .\templates\usuario\facturas.html:22
+msgid "Buscar"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:30
+#: .\templates\usuario\revisar_factura.html:35
+msgid "Número de Factura"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:31
+#: .\templates\usuario\revisar_factura.html:41
+msgid "NIT del Cliente"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:32
+msgid "Cliente Asociado"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:33
+#: .\templates\usuario\revisar_factura.html:55
+msgid "Fecha de Emisión"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:34
+msgid "Monto Total"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:46
+msgid "No asociado"
+msgstr ""
+
+#: .\templates\usuario\facturas.html:57
+msgid "No se encontraron facturas que coincidan con tu búsqueda."
+msgstr ""
+
+#: .\templates\usuario\login.html:4
+msgid "Iniciar Sesión"
+msgstr ""
+
+#: .\templates\usuario\login.html:16
+msgid "Bienvenido a Pragma"
+msgstr ""
+
+#: .\templates\usuario\login.html:17
+msgid "Ingresa tus credenciales para acceder al sistema de conciliación OCR."
+msgstr ""
+
+#: .\templates\usuario\login.html:27
+msgid "Contraseña"
+msgstr ""
+
+#: .\templates\usuario\login.html:30
+msgid "Entrar al Sistema"
+msgstr ""
+
+#: .\templates\usuario\login.html:34
+msgid "¿Problemas para ingresar? Contacta a soporte."
+msgstr ""
+
+#: .\templates\usuario\pagos.html:8
+msgid "Estado de Pagos y Conciliación"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:12
+msgid "Exportar Excel"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:20
+msgid "Filtrar por estado:"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:22
+msgid "Todos los estados"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:23
+msgid "Conciliado (Match)"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:25
+msgid "No coincide"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:27
+msgid "Aplicar Filtro"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:36
+msgid "Certificado Bancario"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:37
+msgid "Estado de Conciliación"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:38
+msgid "Nivel de Confianza"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:55
+msgid "Conciliado"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:71
+msgid "Descargar PDF de Conciliación"
+msgstr ""
+
+#: .\templates\usuario\pagos.html:79
+msgid ""
+"No se han encontrado registros de pagos para los criterios seleccionados."
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:4
+msgid "Revisar Factura"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:10
+msgid "Revisar Datos Extraídos"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:11
+msgid ""
+"Verifica que la información extraída por el motor OCR sea correcta antes de "
+"guardarla."
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:16
+msgid "Atención: Se detectaron algunas inconsistencias durante la extracción:"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:27
+msgid "Formulario de Confirmación"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:49
+msgid "Monto (Q)"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:62
+msgid "Asociar Cliente (Manual)"
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:66
+msgid ""
+"Usa este campo si el sistema no pudo identificar al cliente automáticamente "
+"por su NIT."
+msgstr ""
+
+#: .\templates\usuario\revisar_factura.html:72
+msgid "Descartar y volver a subir"
+msgstr ""

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Facturas | Pragma OCR{% endblock %}
+{% block title %}{% trans "Facturas" %} | Pragma OCR{% endblock %}
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h2">Consulta de Facturas</h1>
+    <h1 class="h2">{% trans "Consulta de Facturas" %}</h1>
     <a href="{% url 'usuario:cargar_factura' %}" class="btn btn-primary">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        Cargar Factura
+        {% trans "Cargar Factura" %}
     </a>
 </div>
 
@@ -16,9 +17,9 @@
         <form method="get" class="d-flex gap-2 flex-grow-1" style="max-width: 500px;">
             <div class="search-input-wrapper">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" name="q" value="{{ search_query }}" class="form-control" placeholder="Número, NIT o nombre del cliente...">
+                <input type="text" name="q" value="{{ search_query }}" class="form-control" placeholder="{% trans 'Número, NIT o nombre del cliente...' %}">
             </div>
-            <button class="btn btn-secondary" type="submit">Buscar</button>
+            <button class="btn btn-secondary" type="submit">{% trans "Buscar" %}</button>
         </form>
     </div>
     
@@ -26,11 +27,11 @@
         <table class="m-0">
             <thead>
                 <tr>
-                    <th>Número de Factura</th>
-                    <th>NIT del Cliente</th>
-                    <th>Cliente Asociado</th>
-                    <th>Fecha de Emisión</th>
-                    <th style="text-align: right;">Monto Total</th>
+                    <th>{% trans "Número de Factura" %}</th>
+                    <th>{% trans "NIT del Cliente" %}</th>
+                    <th>{% trans "Cliente Asociado" %}</th>
+                    <th>{% trans "Fecha de Emisión" %}</th>
+                    <th style="text-align: right;">{% trans "Monto Total" %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +43,7 @@
                             {% if factura.cliente %}
                                 <span class="client-name">{{ factura.cliente.nombre }}</span>
                             {% else %}
-                                <span class="text-muted italic">No asociado</span>
+                                <span class="text-muted italic">{% trans "No asociado" %}</span>
                             {% endif %}
                         </td>
                         <td>{{ factura.fecha|date:"d/m/Y" }}</td>
@@ -53,7 +54,7 @@
                         <td colspan="5" class="text-center py-5">
                             <div class="empty-state">
                                 <div class="empty-icon">📂</div>
-                                <p class="text-muted">No se encontraron facturas que coincidan con tu búsqueda.</p>
+                                <p class="text-muted">{% trans "No se encontraron facturas que coincidan con tu búsqueda." %}</p>
                             </div>
                         </td>
                     </tr>

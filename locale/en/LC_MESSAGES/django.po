@@ -1,0 +1,376 @@
+# Pragma - Django OCR Invoice Processing System
+# Copyright (C) 2026 Pragma Team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Pragma 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-18 20:01-0500\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Español"
+msgstr "Spanish"
+
+msgid "English"
+msgstr "English"
+
+msgid "Admin Certificados"
+msgstr "Admin Certificates"
+
+msgid "Administración de certificados bancarios"
+msgstr "Bank Certificate Management"
+
+msgid "Crear certificado"
+msgstr "Create Certificate"
+
+msgid "Guardar certificado"
+msgstr "Save Certificate"
+
+msgid "Listado"
+msgstr "List"
+
+msgid "Referencia"
+msgstr "Reference"
+
+msgid "Monto"
+msgstr "Amount"
+
+msgid "Fecha"
+msgstr "Date"
+
+msgid "NIT"
+msgstr "NIT"
+
+msgid "Acciones"
+msgstr "Actions"
+
+msgid "Editar"
+msgstr "Edit"
+
+msgid "Eliminar"
+msgstr "Delete"
+
+msgid "No hay certificados."
+msgstr "No certificates found."
+
+msgid "Editar Certificado"
+msgstr "Edit Certificate"
+
+msgid "Editar certificado"
+msgstr "Edit certificate"
+
+msgid "Guardar cambios"
+msgstr "Save changes"
+
+msgid "Volver"
+msgstr "Back"
+
+msgid "Editar Factura"
+msgstr "Edit Invoice"
+
+msgid "Editar factura"
+msgstr "Edit invoice"
+
+msgid "Editar Usuario"
+msgstr "Edit User"
+
+msgid "Editar usuario"
+msgstr "Edit user"
+
+msgid "Admin Facturas"
+msgstr "Admin Invoices"
+
+msgid "Administración de facturas"
+msgstr "Invoice Management"
+
+msgid "Cargar factura por OCR"
+msgstr "Upload Invoice via OCR"
+
+msgid "Subir y procesar"
+msgstr "Upload and process"
+
+msgid "Número"
+msgstr "Number"
+
+msgid "No hay facturas."
+msgstr "No invoices found."
+
+msgid "Revisar Factura (Admin)"
+msgstr "Review Invoice (Admin)"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Facturas"
+msgstr "Invoices"
+
+msgid "Revisar OCR"
+msgstr "Review OCR"
+
+msgid "Revisar Datos Extraídos (Admin)"
+msgstr "Review Extracted Data (Admin)"
+
+msgid "Verifica y corrige los datos antes de guardarlos en el sistema."
+msgstr "Verify and correct the data before saving it to the system."
+
+msgid "Problemas de extracción:"
+msgstr "Extraction issues:"
+
+msgid "Edición de Datos Extraídos"
+msgstr "Extracted Data Editing"
+
+msgid "Número de Factura:"
+msgstr "Invoice Number:"
+
+msgid "NIT del Cliente:"
+msgstr "Client NIT:"
+
+msgid "Monto:"
+msgstr "Amount:"
+
+msgid "Fecha:"
+msgstr "Date:"
+
+msgid "Asociar a Cliente:"
+msgstr "Associate to Client:"
+
+msgid "Cancelar"
+msgstr "Cancel"
+
+msgid "Guardar Factura"
+msgstr "Save Invoice"
+
+msgid "Admin Usuarios"
+msgstr "Admin Users"
+
+msgid "Administración de usuarios"
+msgstr "User Management"
+
+msgid "Crear usuario"
+msgstr "Create user"
+
+msgid "Usuario"
+msgstr "User"
+
+msgid "Correo"
+msgstr "Email"
+
+msgid "Rol"
+msgstr "Role"
+
+msgid "No hay usuarios de negocio registrados."
+msgstr "No business users registered."
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Pagos"
+msgstr "Payments"
+
+msgid "Panel Admin"
+msgstr "Admin Panel"
+
+msgid "Idioma"
+msgstr "Language"
+
+msgid "Cerrar sesión"
+msgstr "Log out"
+
+msgid "Ingresar"
+msgstr "Log in"
+
+msgid "Cargar Factura"
+msgstr "Upload Invoice"
+
+msgid "Cargar Nueva Factura"
+msgstr "Upload New Invoice"
+
+msgid "Sube un archivo PDF o imagen para iniciar el procesamiento inteligente con OCR."
+msgstr "Upload a PDF or image file to start intelligent OCR processing."
+
+msgid "Cliente (Opcional)"
+msgstr "Client (Optional)"
+
+msgid "Archivo de Factura"
+msgstr "Invoice File"
+
+msgid "Haz clic para subir"
+msgstr "Click to upload"
+
+msgid "o arrastra y suelta"
+msgstr "or drag and drop"
+
+msgid "PDF, PNG, JPG hasta 10MB"
+msgstr "PDF, PNG, JPG up to 10MB"
+
+msgid "Procesar Documento"
+msgstr "Process Document"
+
+msgid "Archivo seleccionado:"
+msgstr "File selected:"
+
+msgid "Panel de Control"
+msgstr "Control Panel"
+
+msgid "Nueva Factura"
+msgstr "New Invoice"
+
+msgid "Facturas Procesadas"
+msgstr "Processed Invoices"
+
+msgid "Tasa de Match"
+msgstr "Match Rate"
+
+msgid "Pendientes"
+msgstr "Pending"
+
+msgid "Tiempo Ahorrado"
+msgstr "Time Saved"
+
+msgid "Inconsistencias Recientes"
+msgstr "Recent Inconsistencies"
+
+msgid "Ver todos"
+msgstr "View all"
+
+msgid "Factura"
+msgstr "Invoice"
+
+msgid "Certificado"
+msgstr "Certificate"
+
+msgid "Estado"
+msgstr "Status"
+
+msgid "Puntaje"
+msgstr "Score"
+
+msgid "Match"
+msgstr "Match"
+
+msgid "Parcial"
+msgstr "Partial"
+
+msgid "Inconsistente"
+msgstr "Inconsistent"
+
+msgid "No se han detectado inconsistencias recientes. Todo está al día."
+msgstr "No recent inconsistencies detected. Everything is up to date."
+
+msgid "Consulta de Facturas"
+msgstr "Invoice Query"
+
+msgid "Número, NIT o nombre del cliente..."
+msgstr "Number, NIT or client name..."
+
+msgid "Buscar"
+msgstr "Search"
+
+msgid "Número de Factura"
+msgstr "Invoice Number"
+
+msgid "NIT del Cliente"
+msgstr "Client NIT"
+
+msgid "Cliente Asociado"
+msgstr "Associated Client"
+
+msgid "Fecha de Emisión"
+msgstr "Issue Date"
+
+msgid "Monto Total"
+msgstr "Total Amount"
+
+msgid "No asociado"
+msgstr "Not associated"
+
+msgid "No se encontraron facturas que coincidan con tu búsqueda."
+msgstr "No invoices found matching your search."
+
+msgid "Iniciar Sesión"
+msgstr "Log In"
+
+msgid "Bienvenido a Pragma"
+msgstr "Welcome to Pragma"
+
+msgid "Ingresa tus credenciales para acceder al sistema de conciliación OCR."
+msgstr "Enter your credentials to access the OCR reconciliation system."
+
+msgid "Contraseña"
+msgstr "Password"
+
+msgid "Entrar al Sistema"
+msgstr "Enter System"
+
+msgid "¿Problemas para ingresar? Contacta a soporte."
+msgstr "Having trouble logging in? Contact support."
+
+msgid "Estado de Pagos y Conciliación"
+msgstr "Payment and Reconciliation Status"
+
+msgid "Exportar Excel"
+msgstr "Export Excel"
+
+msgid "Filtrar por estado:"
+msgstr "Filter by status:"
+
+msgid "Todos los estados"
+msgstr "All statuses"
+
+msgid "Conciliado (Match)"
+msgstr "Reconciled (Match)"
+
+msgid "No coincide"
+msgstr "No match"
+
+msgid "Aplicar Filtro"
+msgstr "Apply Filter"
+
+msgid "Certificado Bancario"
+msgstr "Bank Certificate"
+
+msgid "Estado de Conciliación"
+msgstr "Reconciliation Status"
+
+msgid "Nivel de Confianza"
+msgstr "Confidence Level"
+
+msgid "Conciliado"
+msgstr "Reconciled"
+
+msgid "Descargar PDF de Conciliación"
+msgstr "Download Reconciliation PDF"
+
+msgid "No se han encontrado registros de pagos para los criterios seleccionados."
+msgstr "No payment records found for the selected criteria."
+
+msgid "Revisar Factura"
+msgstr "Review Invoice"
+
+msgid "Revisar Datos Extraídos"
+msgstr "Review Extracted Data"
+
+msgid "Verifica que la información extraída por el motor OCR sea correcta antes de guardarla."
+msgstr "Verify that the information extracted by the OCR engine is correct before saving it."
+
+msgid "Atención: Se detectaron algunas inconsistencias durante la extracción:"
+msgstr "Warning: Some inconsistencies were detected during extraction:"
+
+msgid "Formulario de Confirmación"
+msgstr "Confirmation Form"
+
+msgid "Monto (Q)"
+msgstr "Amount (Q)"
+
+msgid "Asociar Cliente (Manual)"
+msgstr "Associate Client (Manual)"
+
+msgid "Usa este campo si el sistema no pudo identificar al cliente automáticamente por su NIT."
+msgstr "Use this field if the system could not identify the client automatically by their NIT."
+
+msgid "Descartar y volver a subir"
+msgstr "Discard and re-upload"

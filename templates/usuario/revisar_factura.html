@@ -1,18 +1,19 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Revisar Factura | Pragma OCR{% endblock %}
+{% block title %}{% trans "Revisar Factura" %} | Pragma OCR{% endblock %}
 
 {% block content %}
 <div class="row" style="display: flex; justify-content: center;">
     <div class="col-md-8" style="width: 100%; max-width: 800px;">
         <div class="mb-5">
-            <h1 class="h2 mb-2 text-center">Revisar Datos Extraídos</h1>
-            <p class="text-muted text-center">Verifica que la información extraída por el motor OCR sea correcta antes de guardarla.</p>
+            <h1 class="h2 mb-2 text-center">{% trans "Revisar Datos Extraídos" %}</h1>
+            <p class="text-muted text-center">{% trans "Verifica que la información extraída por el motor OCR sea correcta antes de guardarla." %}</p>
         </div>
 
         {% if ocr_errors %}
             <div class="alert alert-warning">
-                <div class="small fw-bold">Atención: Se detectaron algunas inconsistencias durante la extracción:</div>
+                <div class="small fw-bold">{% trans "Atención: Se detectaron algunas inconsistencias durante la extracción:" %}</div>
                 <ul class="mb-0 mt-1 small">
                     {% for error in ocr_errors %}
                         <li>{{ error }}</li>
@@ -23,7 +24,7 @@
 
         <div class="card p-0 overflow-hidden shadow-lg border-primary-light">
             <div class="bg-primary p-4 text-white">
-                <h3 class="h5 mb-0">Formulario de Confirmación</h3>
+                <h3 class="h5 mb-0">{% trans "Formulario de Confirmación" %}</h3>
             </div>
             <div class="p-5">
                 <form method="post">
@@ -31,13 +32,13 @@
                     
                     <div class="row mb-4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <div>
-                            <label for="{{ form.numero_factura.id_for_label }}" class="form-label fw-bold small text-uppercase">Número de Factura</label>
+                            <label for="{{ form.numero_factura.id_for_label }}" class="form-label fw-bold small text-uppercase">{% trans "Número de Factura" %}</label>
                             {{ form.numero_factura }}
                             {% if form.numero_factura.errors %}<div class="text-error small mt-1">{{ form.numero_factura.errors }}</div>{% endif %}
                         </div>
 
                         <div>
-                            <label for="{{ form.cliente_nit.id_for_label }}" class="form-label fw-bold small text-uppercase">NIT del Cliente</label>
+                            <label for="{{ form.cliente_nit.id_for_label }}" class="form-label fw-bold small text-uppercase">{% trans "NIT del Cliente" %}</label>
                             {{ form.cliente_nit }}
                             {% if form.cliente_nit.errors %}<div class="text-error small mt-1">{{ form.cliente_nit.errors }}</div>{% endif %}
                         </div>
@@ -45,33 +46,33 @@
 
                     <div class="row mb-4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <div>
-                            <label for="{{ form.monto.id_for_label }}" class="form-label fw-bold small text-uppercase">Monto (Q)</label>
+                            <label for="{{ form.monto.id_for_label }}" class="form-label fw-bold small text-uppercase">{% trans "Monto (Q)" %}</label>
                             {{ form.monto }}
                             {% if form.monto.errors %}<div class="text-error small mt-1">{{ form.monto.errors }}</div>{% endif %}
                         </div>
 
                         <div>
-                            <label for="{{ form.fecha.id_for_label }}" class="form-label fw-bold small text-uppercase">Fecha de Emisión</label>
+                            <label for="{{ form.fecha.id_for_label }}" class="form-label fw-bold small text-uppercase">{% trans "Fecha de Emisión" %}</label>
                             {{ form.fecha }}
                             {% if form.fecha.errors %}<div class="text-error small mt-1">{{ form.fecha.errors }}</div>{% endif %}
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <label for="{{ form.cliente.id_for_label }}" class="form-label fw-bold small text-uppercase">Asociar Cliente (Manual)</label>
+                        <label for="{{ form.cliente.id_for_label }}" class="form-label fw-bold small text-uppercase">{% trans "Asociar Cliente (Manual)" %}</label>
                         <div class="select-wrapper">
                             {{ form.cliente }}
                         </div>
-                        <div class="form-text small text-muted mt-2 italic">Usa este campo si el sistema no pudo identificar al cliente automáticamente por su NIT.</div>
+                        <div class="form-text small text-muted mt-2 italic">{% trans "Usa este campo si el sistema no pudo identificar al cliente automáticamente por su NIT." %}</div>
                         {% if form.cliente.errors %}<div class="text-error small mt-1">{{ form.cliente.errors }}</div>{% endif %}
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center pt-4 border-top">
                         <a href="{% url 'usuario:cargar_factura' %}" class="text-muted fw-600 text-decoration-none hover-dark">
-                            &larr; Descartar y volver a subir
+                            &larr; {% trans "Descartar y volver a subir" %}
                         </a>
                         <button type="submit" class="btn btn-primary btn-lg px-5">
-                            Guardar Factura
+                            {% trans "Guardar Factura" %}
                         </button>
                     </div>
                 </form>

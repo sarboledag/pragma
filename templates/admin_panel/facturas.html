@@ -1,26 +1,27 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Admin Facturas | Pragma OCR{% endblock %}
+{% block title %}{% trans "Admin Facturas" %} | Pragma OCR{% endblock %}
 
 {% block content %}
-<h1>Administración de facturas</h1>
+<h1>{% trans "Administración de facturas" %}</h1>
 
-<h2>Cargar factura por OCR</h2>
+<h2>{% trans "Cargar factura por OCR" %}</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-primary" type="submit">Subir y procesar</button>
+    <button class="btn btn-primary" type="submit">{% trans "Subir y procesar" %}</button>
 </form>
 
-<h2>Listado</h2>
+<h2>{% trans "Listado" %}</h2>
 <table>
     <thead>
         <tr>
-            <th>Número</th>
-            <th>Monto</th>
-            <th>Fecha</th>
-            <th>NIT</th>
-            <th>Acciones</th>
+            <th>{% trans "Número" %}</th>
+            <th>{% trans "Monto" %}</th>
+            <th>{% trans "Fecha" %}</th>
+            <th>{% trans "NIT" %}</th>
+            <th>{% trans "Acciones" %}</th>
         </tr>
     </thead>
     <tbody>
@@ -31,16 +32,16 @@
                 <td>{{ factura.fecha }}</td>
                 <td>{{ factura.cliente_nit }}</td>
                 <td>
-                    <a class="btn btn-secondary" href="{% url 'admin_panel:editar_factura' factura.id %}">Editar</a>
+                    <a class="btn btn-secondary" href="{% url 'admin_panel:editar_factura' factura.id %}">{% trans "Editar" %}</a>
                     <form method="post" action="{% url 'admin_panel:eliminar_factura' factura.id %}" style="display:inline;">
                         {% csrf_token %}
-                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        <button class="btn btn-danger" type="submit">{% trans "Eliminar" %}</button>
                     </form>
                 </td>
             </tr>
         {% empty %}
             <tr>
-                <td colspan="5">No hay facturas.</td>
+                <td colspan="5">{% trans "No hay facturas." %}</td>
             </tr>
         {% endfor %}
     </tbody>

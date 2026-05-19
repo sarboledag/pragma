@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Cargar Factura | Pragma OCR{% endblock %}
+{% block title %}{% trans "Cargar Factura" %} | Pragma OCR{% endblock %}
 
 {% block content %}
 <div class="row" style="display: flex; justify-content: center; align-items: center; min-height: 70vh;">
     <div class="col-md-6" style="width: 100%; max-width: 600px;">
         <div class="text-center mb-5">
-            <h1 class="h2 mb-2">Cargar Nueva Factura</h1>
-            <p class="text-muted">Sube un archivo PDF o imagen para iniciar el procesamiento inteligente con OCR.</p>
+            <h1 class="h2 mb-2">{% trans "Cargar Nueva Factura" %}</h1>
+            <p class="text-muted">{% trans "Sube un archivo PDF o imagen para iniciar el procesamiento inteligente con OCR." %}</p>
         </div>
 
         <div class="card p-5">
@@ -15,7 +16,7 @@
                 {% csrf_token %}
                 
                 <div class="mb-4">
-                    <label for="id_cliente" class="form-label fw-600">Cliente (Opcional)</label>
+                    <label for="id_cliente" class="form-label fw-600">{% trans "Cliente (Opcional)" %}</label>
                     <div class="input-group">
                         {{ form.cliente }}
                     </div>
@@ -23,13 +24,13 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="id_archivo" class="form-label fw-600">Archivo de Factura</label>
+                    <label for="id_archivo" class="form-label fw-600">{% trans "Archivo de Factura" %}</label>
                     <div class="upload-zone" id="upload-zone">
                         <div class="upload-icon">📄</div>
                         <div class="upload-text">
-                            <span class="fw-bold text-primary">Haz clic para subir</span> o arrastra y suelta
+                            <span class="fw-bold text-primary">{% trans "Haz clic para subir" %}</span> {% trans "o arrastra y suelta" %}
                         </div>
-                        <div class="small text-muted mt-1">PDF, PNG, JPG hasta 10MB</div>
+                        <div class="small text-muted mt-1">{% trans "PDF, PNG, JPG hasta 10MB" %}</div>
                         {{ form.archivo }}
                     </div>
                     {% if form.archivo.errors %}
@@ -38,8 +39,8 @@
                 </div>
 
                 <div class="d-grid gap-3" style="display: grid; gap: 1rem;">
-                    <button type="submit" class="btn btn-primary btn-lg">Procesar Documento</button>
-                    <a href="{% url 'usuario:consulta_facturas' %}" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary btn-lg">{% trans "Procesar Documento" %}</button>
+                    <a href="{% url 'usuario:consulta_facturas' %}" class="btn btn-secondary">{% trans "Cancelar" %}</a>
                 </div>
             </form>
         </div>
@@ -120,7 +121,7 @@
 
     fileInput.addEventListener('change', function() {
         if (this.files && this.files[0]) {
-            uploadText.innerHTML = `<span class='fw-bold text-success'>Archivo seleccionado:</span> ${this.files[0].name}`;
+            uploadText.innerHTML = `<span class='fw-bold text-success'>{% trans "Archivo seleccionado:" %}</span> ${this.files[0].name}`;
             uploadZone.style.borderColor = '#10B981';
             uploadZone.style.backgroundColor = '#ECFDF5';
         }

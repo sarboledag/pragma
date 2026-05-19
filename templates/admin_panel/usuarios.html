@@ -1,25 +1,26 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Admin Usuarios | Pragma OCR{% endblock %}
+{% block title %}{% trans "Admin Usuarios" %} | Pragma OCR{% endblock %}
 
 {% block content %}
-<h1>Administración de usuarios</h1>
+<h1>{% trans "Administración de usuarios" %}</h1>
 
-<h2>Crear usuario</h2>
+<h2>{% trans "Crear usuario" %}</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-primary" type="submit">Crear usuario</button>
+    <button class="btn btn-primary" type="submit">{% trans "Crear usuario" %}</button>
 </form>
 
-<h2>Listado</h2>
+<h2>{% trans "Listado" %}</h2>
 <table>
     <thead>
         <tr>
-            <th>Usuario</th>
-            <th>Correo</th>
-            <th>Rol</th>
-            <th>Acciones</th>
+            <th>{% trans "Usuario" %}</th>
+            <th>{% trans "Correo" %}</th>
+            <th>{% trans "Rol" %}</th>
+            <th>{% trans "Acciones" %}</th>
         </tr>
     </thead>
     <tbody>
@@ -29,16 +30,16 @@
                 <td>{{ perfil.user.email }}</td>
                 <td>{{ perfil.get_rol_display }}</td>
                 <td>
-                    <a class="btn btn-secondary" href="{% url 'admin_panel:editar_usuario' perfil.id %}">Editar</a>
+                    <a class="btn btn-secondary" href="{% url 'admin_panel:editar_usuario' perfil.id %}">{% trans "Editar" %}</a>
                     <form method="post" action="{% url 'admin_panel:eliminar_usuario' perfil.id %}" style="display:inline;">
                         {% csrf_token %}
-                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        <button class="btn btn-danger" type="submit">{% trans "Eliminar" %}</button>
                     </form>
                 </td>
             </tr>
         {% empty %}
             <tr>
-                <td colspan="4">No hay usuarios de negocio registrados.</td>
+                <td colspan="4">{% trans "No hay usuarios de negocio registrados." %}</td>
             </tr>
         {% endfor %}
     </tbody>

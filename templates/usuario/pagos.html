@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Pagos | Pragma OCR{% endblock %}
+{% block title %}{% trans "Pagos" %} | Pragma OCR{% endblock %}
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h2">Estado de Pagos y Conciliación</h1>
+    <h1 class="h2">{% trans "Estado de Pagos y Conciliación" %}</h1>
     <div class="d-flex gap-2">
         <a class="btn btn-outline" href="{% url 'usuario:exportar_pagos_excel' %}">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            Exportar Excel
+            {% trans "Exportar Excel" %}
         </a>
     </div>
 </div>
@@ -16,14 +17,14 @@
 <div class="card p-0 overflow-hidden">
     <div class="p-4 border-bottom bg-light d-flex justify-content-between align-items-center">
         <form method="get" class="d-flex gap-3 align-items-center">
-            <label for="estado" class="fw-600 small text-muted text-uppercase">Filtrar por estado:</label>
+            <label for="estado" class="fw-600 small text-muted text-uppercase">{% trans "Filtrar por estado:" %}</label>
             <select name="estado" id="estado" class="form-select">
-                <option value="">Todos los estados</option>
-                <option value="match" {% if estado == "match" %}selected{% endif %}>✅ Conciliado (Match)</option>
-                <option value="partial" {% if estado == "partial" %}selected{% endif %}>⚠️ Parcial</option>
-                <option value="no_match" {% if estado == "no_match" %}selected{% endif %}>❌ No coincide</option>
+                <option value="">{% trans "Todos los estados" %}</option>
+                <option value="match" {% if estado == "match" %}selected{% endif %}>✅ {% trans "Conciliado (Match)" %}</option>
+                <option value="partial" {% if estado == "partial" %}selected{% endif %}>⚠️ {% trans "Parcial" %}</option>
+                <option value="no_match" {% if estado == "no_match" %}selected{% endif %}>❌ {% trans "No coincide" %}</option>
             </select>
-            <button class="btn btn-secondary" type="submit">Aplicar Filtro</button>
+            <button class="btn btn-secondary" type="submit">{% trans "Aplicar Filtro" %}</button>
         </form>
     </div>
     
@@ -31,11 +32,11 @@
         <table class="m-0">
             <thead>
                 <tr>
-                    <th>Factura</th>
-                    <th>Certificado Bancario</th>
-                    <th>Estado de Conciliación</th>
-                    <th>Nivel de Confianza</th>
-                    <th style="text-align: right;">Acciones</th>
+                    <th>{% trans "Factura" %}</th>
+                    <th>{% trans "Certificado Bancario" %}</th>
+                    <th>{% trans "Estado de Conciliación" %}</th>
+                    <th>{% trans "Nivel de Confianza" %}</th>
+                    <th style="text-align: right;">{% trans "Acciones" %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,11 +52,11 @@
                         </td>
                         <td>
                             {% if detalle.estado_match == 'match' %}
-                                <span class="badge badge-success">Conciliado</span>
+                                <span class="badge badge-success">{% trans "Conciliado" %}</span>
                             {% elif detalle.estado_match == 'partial' %}
-                                <span class="badge badge-warning">Parcial</span>
+                                <span class="badge badge-warning">{% trans "Parcial" %}</span>
                             {% else %}
-                                <span class="badge badge-error">Inconsistente</span>
+                                <span class="badge badge-error">{% trans "Inconsistente" %}</span>
                             {% endif %}
                         </td>
                         <td>
@@ -67,7 +68,7 @@
                             </div>
                         </td>
                         <td style="text-align: right;">
-                            <a class="btn btn-secondary btn-sm" href="{% url 'usuario:exportar_pago_pdf' detalle.id %}" title="Descargar PDF de Conciliación">
+                            <a class="btn btn-secondary btn-sm" href="{% url 'usuario:exportar_pago_pdf' detalle.id %}" title="{% trans 'Descargar PDF de Conciliación' %}">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                                 PDF
                             </a>
@@ -75,7 +76,7 @@
                     </tr>
                 {% empty %}
                     <tr>
-                        <td colspan="5" class="text-center py-5 text-muted">No se han encontrado registros de pagos para los criterios seleccionados.</td>
+                        <td colspan="5" class="text-center py-5 text-muted">{% trans "No se han encontrado registros de pagos para los criterios seleccionados." %}</td>
                     </tr>
                 {% endfor %}
             </tbody>
